@@ -12,3 +12,5 @@ ADD requirements.txt .
 RUN pip install -U pip && \
     pip install -r requirements.txt && \
     pip install --upgrade https://github.com/vbilyi/prometheus_toolbox/tarball/master
+
+ENTRYPOINT ["gunicorn", "wsgi:app", "-b 0.0.0.0:8000", "--reload"]
