@@ -5,8 +5,6 @@ services:
     build: .
     restart: always
     container_name: flask
-    command: bash -c "
-      gunicorn wsgi:app -b 0.0.0.0:8000 --reload"
     volumes:
       - .:/src
     ports:
